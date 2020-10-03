@@ -1,13 +1,12 @@
 import React from "react";
+import {Jumbotron} from "react-bootstrap";
 import style from "./style.css";
 
-function Header() {
+function Header(props) {
     return (
-        <div className="jumbotron text-center">
-            <div className="container text-light">
+        <Jumbotron className="text-center container" style={style} >
                 <h1>Google Books Search</h1>
-            </div>
-        </div>
+        </Jumbotron>
     );
 }
 

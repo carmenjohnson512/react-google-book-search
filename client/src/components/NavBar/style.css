@@ -1,5 +1,11 @@
 nav {
-    background-color: rgb(255,143,111)
+    background-color: purple;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 a {
