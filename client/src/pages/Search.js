@@ -6,12 +6,14 @@ import "../App.css";
 
 class Search extends React.Component {
     state = {
-        value: "",
+        search: "",
+        value: "Buddhism",
         books: []
     };
 
     componentDidMount() {
-        this.searchBook();
+        let search = this.state.value;
+        this.searchBook(search);
     }
 
     makeBook = bookData => {
@@ -29,7 +31,7 @@ class Search extends React.Component {
         API.getBook(search)
             .then(res => this.setState({ books: res.data.items.map(bookData => this.makeBook(bookData)) }))
             .catch(err => console.error(err));
-    };
+    }; 
 
     handleInputChange = event => {
         const name = event.target.name;

@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export default {
-  getBook: function (query) {
-    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
+  getBook: function (search) {
+    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}`);
   },
   // Deletes the book with the given id
   deleteBook: function (id) {
