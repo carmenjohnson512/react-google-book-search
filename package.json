@@ -1,8 +1,12 @@
 {
-  "name": "google-books",
+  "name": "googlebooks",
   "version": "1.0.0",
   "description": "Google Books",
   "main": "server.js",
+  "engine": {
+    "node": "12.18.0",
+    "npm": "6.14.4"
+  },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -10,7 +14,7 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client && npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
